@@ -52,6 +52,8 @@ class Camara{
                     this.canvasSize = faceapi.createCanvasFromMedia(this.videoNode);
                     document.body.append(this.canvasSize);
                     this.canvasSize.remove();
+                    
+                    console.log(this.canvasSize.width, this.canvasSize.height);
 
                     let contenedor = this.videoNode.parentNode,
                         contWidth = contenedor.clientWidth,
