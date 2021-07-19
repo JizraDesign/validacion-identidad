@@ -1,4 +1,4 @@
-
+import Device from './Device.js'
 /**
  * Activar camara tomar foto
  */
@@ -13,6 +13,8 @@ class Camara{
         this.mod = 1;
         this.tempo = null;
         this.predictedAges = [];
+        this.device = Device.get();
+        
     };
 
     /**
@@ -35,13 +37,22 @@ class Camara{
      * 
      */
     startVideo(){
+        console.log(this.device);
+        if (this.device.movil !== true){
+            this.camara = {
+                width: { min: 776, ideal: 720, max: 1080 },
+                height: { min: 1024, ideal: 1280, max: 1920 }
+            }
+        }else{
+            this.camara = {
+                width: { min: 1024, ideal: 1280, max: 1920 },
+                height: { min: 776, ideal: 720, max: 1080 }
+            }
+        }
         if( navigator.mediaDevices ){
             navigator.mediaDevices.getUserMedia({
                 audio:false,
-                video:{
-                    width: { min: 776, ideal: 720, max: 1080 },
-                    height: { min: 1024, ideal: 1280, max: 1920 }
-                }
+                video:this.camara
             })
             .then( stream => {
                 this.videoNode.srcObject = stream;
