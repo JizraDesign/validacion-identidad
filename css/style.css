@@ -1,0 +1,320 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)!important;
+}
+:root{
+    --colorP: rgb(56, 61, 107);
+    --background: #b9c5ce;
+    --colorSec: #c9c9c9;
+    
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    background: var(--background);
+    min-height: 100vh;
+}
+
+.card{
+    width: 95%;
+    max-width: 800px;
+    height: 80vh;
+    background: var(--colorSec);
+    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+}
+/* >>>>> -->>>>> ----- menu ----- <<<<<-- <<<<< */
+.menu{
+    width: 60px;
+    height: 100%;
+    padding: 50px 0;
+    background: var(--colorP);
+    border-radius: 25px 0 0 25px;
+    transition: all 0.3s linear;
+    border-left: solid 10px var(--colorP);
+}
+.menu:hover{
+    width: 100%;
+    max-width: 300px;
+}
+.cont__title{
+    width: 100%;
+    margin-bottom: 15px;
+
+}
+.title{
+    width: calc(100% - 50px);
+    color: aliceblue;
+    white-space: nowrap;
+    font-size: 25px;
+    overflow: hidden;
+}
+.menu:hover .title{
+    padding-right: 10px;
+}
+.item__lista__menu{
+    position: relative;
+    height: 70px;
+    list-style: none;
+}
+.btn__menu{
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    border: none;
+    background: none;
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    border-radius: 50px 0 0 50px;
+    color: aliceblue;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: inset 0px 0 0 var(--colorSec);
+    transition: all 0.5s linear;
+}
+.item__lista__menu:hover .btn__menu,
+.item__lista__menu.active .btn__menu{
+    color: var(--colorP);
+    box-shadow: inset -400px 0 0 var(--colorSec);
+}
+.item__lista__menu .btn__menu::before,
+.item__lista__menu .btn__menu::before{
+    position: absolute;
+    content: "";
+    top: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--colorP);
+    border-radius: 50%;
+    box-shadow: 30px 30px 0 var(--colorSec);
+    transition: all 0.1s linear;
+}
+.item__lista__menu .btn__menu::after,
+.item__lista__menu .btn__menu::after{
+    position: absolute;
+    content: "";
+    bottom: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--colorP);
+    border-radius: 50%;
+    box-shadow: 30px -30px 0 var(--colorSec);
+    transition: all 0.1s linear;
+}
+
+.item__lista__menu:hover .btn__menu::before,
+.item__lista__menu.active .btn__menu::before{
+    box-shadow: 10px 10px 0 var(--colorSec);
+}
+.item__lista__menu:hover .btn__menu::after,
+.item__lista__menu.active .btn__menu::after{
+    box-shadow: 10px -10px 0 var(--colorSec);
+}
+.icon__menu{
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    min-width: 50px;
+    color: aliceblue;
+    font-size: 20px;
+    transition: all 0.5s linear;
+}
+.item__lista__menu:hover .icon__menu,
+.item__lista__menu.active .icon__menu{
+    color: var(--colorP);
+}
+
+.btn__menu > span{
+    width: calc( 100% - 100px );
+    overflow: hidden;
+}
+/* >>>>> -->>>>> ----- slder ----- <<<<<-- <<<<< */
+.slider{
+    position: relative;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius:  0 25px 25px 0;
+}
+.item{
+    min-width: 100%;
+    height: 100%;
+    padding-top: 25px;
+    overflow-y: auto;
+    transition: all 0.5s linear;
+}
+.item .title{
+    color: var(--colorP);
+}
+.cont__btn{
+    position: absolute;
+
+    justify-content: flex-end;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 60px;
+    padding: 0 15px;
+    border-radius: 0 0 25px 0;
+}
+.btn__next{
+    width: 150px;
+    height: 40px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 800;
+    color: var(--colorP);
+    transition: all 0.5s linear;
+}
+.btn__next:hover{
+    color: aliceblue;
+    background: var(--colorP);
+}
+
+/* >>>>> -->>>>> ----- elementos ----- <<<<<-- <<<<< */
+
+.foto,
+.audio,
+.firma{
+    flex-wrap: wrap;
+    width: 95%;
+    color: aliceblue;
+    margin: 0 auto;
+}
+.foto h1,
+.audio h1,
+.firma h1{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.fotoPreview{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: 0px;
+    border: solid 0px;
+    margin-top: 15px;
+    background: black;
+    overflow: hidden;
+    transition: all 0.3s linear;
+}
+.fotoPreview.active{
+    height: 340px;
+    border: solid 2px;
+}
+.btn__pictur__reload{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+}
+.btn__camara,
+.btn__foto,
+.btn__rec,
+.btn__Firma{
+    width: 100%;
+    min-width: 200px;
+    height: 50px;
+    border: none;
+    font-weight: 800;
+    color: var(--colorP);
+    cursor: pointer;
+}
+.cont__video{
+    position: relative;
+    width: 100%;
+    max-width: 242px;
+}
+.video__cam{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* transform: rotateY(180deg); */
+}
+.cont__prew{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 400px;
+    background: #000;
+    border: solid 2px;
+}
+#resFoto{
+    height: 100%;
+    object-fit: contain;
+}
+.canvas__ia{
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+.btn__foto{
+    font-size: 20px;
+}
+/* >>>>> -->>>>> ----- voz ----- <<<<<-- <<<<< */
+.btn__rec{
+    width: 200px;
+    height: 200px;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    margin: 50px auto;
+    transition: all 0.3s;
+}
+.btn__rec i{
+    font-size: 25px;
+    margin-top: 15px;
+}
+.btn__rec:active{
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    transform: translateY(5px);
+}
+.btn__rec.rec{
+    background: red;
+    color: aliceblue;
+    font-weight: 800;
+    font-size: 18px;
+}
+#micDevice{
+    display: none;
+}
+/* >>>>> -->>>>> ----- firma ----- <<<<<-- <<<<< */
+.cont__canvas__firma{
+    width: 100%;
+    height: 250px;
+    border: solid 2px;
+    overflow: hidden;
+}
+.canvas__firma{
+    width: 100%;
+    height: 100%;
+}

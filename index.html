@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto | Audio | Firma</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="center">
+    <section class="card center">
+        <section class="menu">
+            <div class="cont__title center">
+                <i class="icon__menu fab fa-empire"></i><h1 class="title">Confirmacion de <br> identidad</h1>
+
+            </div>
+            <nav class="nav__menu">
+                <ul class="lista__menu">
+                    <li class="item__lista__menu center active">
+                        <button class="btn__menu" title="Foto"><i class="icon__menu fas fa-camera"></i><span>Foto</span></button>
+                    </li>
+                    <li class="item__lista__menu center">
+                        <button class="btn__menu" title="Voz"><i class="icon__menu fas fa-voicemail"></i><span>Voz</span></button>
+                    </li>
+                    <li class="item__lista__menu center">
+                        <button class="btn__menu" title="Firma"><i class="icon__menu fas fa-pen-fancy"></i><span>Firma</span></button>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <section id="slider" class="slider center">
+            <div class="item">
+                <div class="foto center">
+                    <h1 class="title">Foto</h1>
+                    <button id="btnCamara" class="btn__camara">Encender Camara</button>
+                    <div class="fotoPreview">
+                        <div id="cont__video" class="cont__video">
+                            <video id="camaraDevice" class="video__cam" autoplay></video>
+                        </div>
+                        <div class="cont__prew center">
+                            <img id="resFoto">
+                        </div>
+                        <button class="btn__pictur__reload fas fa-times center" title="Borar foto"></button>
+                    </div>
+                    <button id="btnFoto" class="btn__foto fas fa-camera"></button>
+                </div>
+            </div>
+            <div class="item">
+                <div class="audio center">
+                    <h1 class="title">Grabación de Voz</h1>
+                    <button id="btnRec" class="btn__rec"><span>Presiona para comenzar la grabación.</span><br><i class="fas fa-microphone-alt"></i> </button>
+                    <audio id="micDevice" controls></audio>
+                </div>
+            </div>
+            <div class="item">
+                <div class="firma center">
+                    <h1 class="title">Firma</h1>
+                    <div class="cont__canvas__firma center">
+                        <canvas id="canvasFirma" class="canvas__firma"></canvas>
+                    </div>
+                    <button id="btnBorrar" class="btn__Firma">Borrar</button>
+                    <button id="btnFirma" class="btn__Firma">Guardar y Enviar</button>
+                </div>
+            </div>
+            <div class="cont__btn center">
+                <button id="btnNext" class="btn__next">Siguiente</button>
+            </div>
+            
+        </section>
+    </section>
+
+    <script src="js/face-api/face-api.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
