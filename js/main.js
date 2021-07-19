@@ -46,6 +46,7 @@ btnFoto.onclick = () => {
 };
 
 btnReload.onclick = () => {
+    camara.apagar();
     camara.encender();
     document.querySelector(".cont__prew").style.display="none";
 };

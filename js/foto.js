@@ -179,6 +179,7 @@ class Camara{
     };
 
     clearAI(){
+        console.log("log");
         clearInterval(this.tempo);
         this.contextIA.clearRect(0, 0, this.canvasIA.width, this.canvasIA.height);
         this.canvasIA.remove();
