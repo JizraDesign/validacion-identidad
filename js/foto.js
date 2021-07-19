@@ -37,7 +37,7 @@ class Camara{
      * 
      */
     startVideo(){
-        console.log(this.device);
+        // console.log(this.device);
         if (this.device.movil !== true){
             this.camara = {
                 width: { min: 776, ideal: 720, max: 1080 },
@@ -64,7 +64,7 @@ class Camara{
                     document.body.append(this.canvasSize);
                     this.canvasSize.remove();
                     
-                    console.log(this.canvasSize.width, this.canvasSize.height);
+                    // console.log(this.canvasSize.width, this.canvasSize.height);
 
                     let contenedor = this.videoNode.parentNode,
                         contWidth = contenedor.clientWidth,
@@ -74,7 +74,7 @@ class Camara{
                     document.querySelector("#camaraDevice").height = contHeight;
 
                     const displaySize = { width: contWidth, height: contHeight };
-                    console.log(displaySize);
+                    // console.log(displaySize);
                     this.canvasIA = faceapi.createCanvasFromMedia(this.videoNode);
                     this.canvasIA.setAttribute("id", "canvasIA");
                     this.canvasIA.setAttribute("class", "canvas__ia");
@@ -192,7 +192,7 @@ class Camara{
     };
 
     clearAI(){
-        console.log("log");
+        // console.log("log");
         clearInterval(this.tempo);
         this.contextIA.clearRect(0, 0, this.canvasIA.width, this.canvasIA.height);
         this.canvasIA.remove();
